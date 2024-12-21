@@ -6,14 +6,25 @@ const Trick = () => {
 
   const [showButtons, setShowButtons] = useState(true);
   const [headingText, setHeadingText] = useState("Choose Any!!!");
+  const [gifUrl, setGifUrl] = useState("");
 
-  const handleSurprise = () => navigate("/404");
+  const handleSurprise = (event) => {
+    event.preventDefault();
+    navigate("/404");
+  };
 
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
+  const playAudioAndShowGif = () => {
+    const audio = new Audio("/audio/rick.mp3");
+    audio.play().catch((error) => {
+      console.error("Error playing audio:", error);
+    });
+
+    setGifUrl(
+      "https://i.pinimg.com/originals/75/98/d1/7598d103a735d5568964e4967e42823d.gif"
+    );
+
+    setShowButtons(false);
+    setHeadingText("Surprise!!! 🎉");
   };
 
   const buttons = [
@@ -25,30 +36,18 @@ const Trick = () => {
     <button
       className="bg-[#e0aa3e] hover:bg-[#e8ba5f] px-4 py-2 rounded-md"
       key="surprise-button"
-      onClick={() => {
-        const audio = new Audio("./src/assets/audio/rick.mp3");
-        audio.play().catch((error) => {
-          console.error("Error playing audio:", error);
-        });
-
-        const gifUrl =
-          "https://i.pinimg.com/originals/75/98/d1/7598d103a735d5568964e4967e42823d.gif";
-        const imgElement = document.createElement("img");
-        imgElement.src = gifUrl;
-        imgElement.alt = "Surprise Gif";
-        imgElement.className = "mt-4";
-
-        const gifContainer = document.getElementById("gif-container");
-        gifContainer.innerHTML = "";
-        gifContainer.appendChild(imgElement);
-
-        setShowButtons(false);
-        setHeadingText("Surprise!!! 🎉");
-      }}
+      onClick={playAudioAndShowGif}
     >
       Surprise
     </button>,
   ];
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  };
 
   shuffleArray(buttons);
 
@@ -60,7 +59,11 @@ const Trick = () => {
       {showButtons ? (
         <div className="flex items-center justify-center gap-5">{buttons}</div>
       ) : null}
-      <div id="gif-container" className="flex justify-center mt-4"></div>
+      {gifUrl && (
+        <div id="gif-container" className="flex justify-center mt-4">
+          <img src={gifUrl} alt="Surprise Gif" className="mt-4" />
+        </div>
+      )}
     </section>
   );
 };

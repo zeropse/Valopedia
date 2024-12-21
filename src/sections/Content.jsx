@@ -4,37 +4,37 @@ const Content = () => {
   const videoClips = [
     {
       videoUrl: "https://youtu.be/GzVQxLv_xuI",
-      imageUrl: "./src/assets/images/danceimg.jpeg",
+      imageUrl: "./images/danceimg.jpeg",
       title: "Valorant | Dancin' | | Editz |",
       username: "zeropse",
     },
     {
       videoUrl: "https://youtu.be/aMbXVM_IQSg",
-      imageUrl: "./src/assets/images/collideimg.jpeg",
+      imageUrl: "./images/collideimg.jpeg",
       title: "Valorant | Collide | | Editz |",
       username: "zeropse",
     },
     {
       videoUrl: "https://youtu.be/38HMDOqZ9QI",
-      imageUrl: "./src/assets/images/cupidimg.jpeg",
+      imageUrl: "./images/cupidimg.jpeg",
       title: "Valorant | Cupid | | Editz |",
       username: "zeropse",
     },
     {
       videoUrl: "https://youtu.be/3LFs4tyir60",
-      imageUrl: "./src/assets/images/fortniteimg.jpeg",
+      imageUrl: "./images/fortniteimg.jpeg",
       title: "Fortnite",
       username: "zeropse",
     },
     {
       videoUrl: "https://youtu.be/408xMGq9Vhk",
-      imageUrl: "./src/assets/images/onivandal.jpeg",
+      imageUrl: "./images/onivandal.jpeg",
       title: "Oni Vandal",
       username: "zeropse",
     },
     {
       videoUrl: "https://youtu.be/FiOYqZGi-u8?si=2-NwfvAfjOu-bpxr",
-      imageUrl: "./src/assets/images/pubg.jpg",
+      imageUrl: "./images/pubg.jpg",
       title: "Pubg Mobile 2020",
       username: "zeropse",
     },

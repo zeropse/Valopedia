@@ -38,11 +38,11 @@ const Hero = () => {
         muted
         loop
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        poster="./src/assets/images/banner.jpeg"
+        poster="./images/banner.jpeg"
       >
-        <source src="./src/assets/banner.webm" type="video/mp4" />
+        <source src="./banner.webm" type="video/mp4" />
         <img
-          src="./src/assets/images/banner.jpeg"
+          src="./images/banner.jpeg"
           alt="Banner"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         />
