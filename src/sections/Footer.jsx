@@ -10,7 +10,6 @@ const Footer = () => {
         <h1 className="text-4xl font-bold text-[#e0aa3e] mb-2">
           Thanks for Visiting!!!
         </h1>
-        <p className="text-lg mt-2">Follow Me!</p>
       </div>
       <div className="flex items-center justify-center gap-4 mb-5">
         <a
@@ -42,7 +41,7 @@ const Footer = () => {
           <GitHubIcon className="cursor-pointer hover:text-[#e0aa3e]" />
         </a>
       </div>
-      <p className="text-center text-sm">
+      <p className="text-center text-sm text-[#e0aa3e]">
         © {new Date().getFullYear()} zeropse.
       </p>
     </section>
